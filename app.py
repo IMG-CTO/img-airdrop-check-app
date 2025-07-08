@@ -21,7 +21,7 @@ def generate_message(df, wallet):
                 f"Wallet address {wallet} was impacted by limitations in the manual IMG Airdrop process "
                 f"for the {data['snapshot_date']} snapshot. This wallet is expected to receive {data['solana_amount']} Solana. "
                 f"Please take a screenshot of this message and send it to the IMG team in the Looking For Rewards channel of the official IMG Telegram. "
-                f"Please allow up to 2 calendar days to receive a response."
+                f"Please ensure to have at least 0.002 Solana in your wallet to support the transaction and allow up to 2 calendar days to receive a response."
             )
     else:
         return (
