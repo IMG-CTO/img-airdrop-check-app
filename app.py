@@ -45,11 +45,6 @@ app_ui = ui.page_fluid(
                     "background-color: #f8f9fa; padding: 10px; border-radius: 4px;"
                 ),
             ),
-            ui.h5("Explore Epoch Data"),
-            ui.div(
-                ui.output_data_frame("table1"),
-                style="height: 300px; overflow-y: scroll;"
-            ),
         ),
 
         # ---------------- Epoch 2 ----------------
@@ -63,11 +58,6 @@ app_ui = ui.page_fluid(
                     "background-color: #f8f9fa; padding: 10px; border-radius: 4px;"
                 ),
             ),
-            ui.h5("Explore Epoch Data"),
-            ui.div(
-                ui.output_data_frame("table2"),
-                style="height: 300px; overflow-y: scroll;"
-            ),
         ),
 
         # ---------------- Epoch 3 ----------------
@@ -80,11 +70,6 @@ app_ui = ui.page_fluid(
                     "white-space: pre-wrap; word-wrap: break-word; "
                     "background-color: #f8f9fa; padding: 10px; border-radius: 4px;"
                 ),
-            ),
-            ui.h5("Explore Epoch Data"),
-            ui.div(
-                ui.output_data_frame("table3"),
-                style="height: 300px; overflow-y: scroll;"
             ),
         ),
     )
@@ -112,21 +97,6 @@ def server(input, output, session):
         if input.wallet3():
             return generate_message(epoch3, input.wallet3())
         return ""
-
-    #@output
-    #@render.data_frame
-    #def table1():
-        #return render.DataTable(epoch1)
-
-    #@output
-    #@render.data_frame
-    #def table2():
-        #return render.DataTable(epoch2)
-
-    #@output
-    #@render.data_frame
-    #def table3():
-        #return render.DataTable(epoch3)
 
 # App
 app = App(app_ui, server)
