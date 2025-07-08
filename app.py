@@ -31,7 +31,7 @@ def generate_message(df, wallet):
 
 # UI
 app_ui = ui.page_fluid(
-    ui.h2("IMG Airdrop Dashboard"),
+    ui.h2("IMG Airdrop Checker"),
     ui.layout_columns(
 
         # ---------------- Epoch 1 ----------------
@@ -113,20 +113,20 @@ def server(input, output, session):
             return generate_message(epoch3, input.wallet3())
         return ""
 
-    @output
-    @render.data_frame
-    def table1():
-        return render.DataTable(epoch1)
+    #@output
+    #@render.data_frame
+    #def table1():
+        #return render.DataTable(epoch1)
 
-    @output
-    @render.data_frame
-    def table2():
-        return render.DataTable(epoch2)
+    #@output
+    #@render.data_frame
+    #def table2():
+        #return render.DataTable(epoch2)
 
-    @output
-    @render.data_frame
-    def table3():
-        return render.DataTable(epoch3)
+    #@output
+    #@render.data_frame
+    #def table3():
+        #return render.DataTable(epoch3)
 
 # App
 app = App(app_ui, server)
