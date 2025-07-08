@@ -39,7 +39,7 @@ app_ui = ui.page_fluid(
             ui.input_text("wallet1", "Enter Wallet Address"),
             ui.output_text_verbatim("result1"),
             ui.h5("Explore Epoch Data"),
-            ui.output_data_frame("table1", height="300px"),
+            ui.output_data_frame("table1"),
         ),
         # Epoch 2
         ui.panel_well(
@@ -47,7 +47,7 @@ app_ui = ui.page_fluid(
             ui.input_text("wallet2", "Enter Wallet Address"),
             ui.output_text_verbatim("result2"),
             ui.h5("Explore Epoch Data"),
-            ui.output_data_frame("table2", height="300px"),
+            ui.output_data_frame("table2"),
         ),
         # Epoch 3
         ui.panel_well(
@@ -55,7 +55,7 @@ app_ui = ui.page_fluid(
             ui.input_text("wallet3", "Enter Wallet Address"),
             ui.output_text_verbatim("result3"),
             ui.h5("Explore Epoch Data"),
-            ui.output_data_frame("table3", height="300px"),
+            ui.output_data_frame("table3"),
         ),
     )
 )
