@@ -1,4 +1,4 @@
-from shiny import App, ui, render, reactive
+from shiny import App, ui, render
 import pandas as pd
 
 # Load data for each epoch
@@ -6,7 +6,7 @@ epoch1 = pd.read_csv("epoch1_FINAL.csv")
 epoch2 = pd.read_csv("epoch2_FINAL.csv")
 epoch3 = pd.read_csv("epoch3_FINAL.csv")
 
-# Helper function to check wallet and return message
+# Helper function to generate result messages
 def generate_message(df, wallet):
     row = df[df["wallet"] == wallet]
     if not row.empty:
@@ -20,7 +20,7 @@ def generate_message(df, wallet):
             return (
                 f"Wallet address {wallet} was impacted by limitations in the manual IMG Airdrop process "
                 f"for the {data['snapshot_date']} snapshot. This wallet is expected to receive {data['solana_amount']} Solana. "
-                f"Please take a screenshot if this message and send it to the IMG team in the Looking For Rewards channel of the official IMG Telegram. "
+                f"Please take a screenshot of this message and send it to the IMG team in the Looking For Rewards channel of the official IMG Telegram. "
                 f"Please allow up to 2 calendar days to receive a response."
             )
     else:
@@ -33,29 +33,59 @@ def generate_message(df, wallet):
 app_ui = ui.page_fluid(
     ui.h2("IMG Airdrop Dashboard"),
     ui.layout_columns(
-        # Epoch 1
+
+        # ---------------- Epoch 1 ----------------
         ui.panel_well(
             ui.h4("Epoch 1"),
             ui.input_text("wallet1", "Enter Wallet Address"),
-            ui.output_text_verbatim("result1"),
+            ui.div(
+                ui.output_text("result1"),
+                style=(
+                    "white-space: pre-wrap; word-wrap: break-word; "
+                    "background-color: #f8f9fa; padding: 10px; border-radius: 4px;"
+                ),
+            ),
             ui.h5("Explore Epoch Data"),
-            ui.output_data_frame("table1"),
+            ui.div(
+                ui.output_data_frame("table1"),
+                style="height: 300px; overflow-y: scroll;"
+            ),
         ),
-        # Epoch 2
+
+        # ---------------- Epoch 2 ----------------
         ui.panel_well(
             ui.h4("Epoch 2"),
             ui.input_text("wallet2", "Enter Wallet Address"),
-            ui.output_text_verbatim("result2"),
+            ui.div(
+                ui.output_text("result2"),
+                style=(
+                    "white-space: pre-wrap; word-wrap: break-word; "
+                    "background-color: #f8f9fa; padding: 10px; border-radius: 4px;"
+                ),
+            ),
             ui.h5("Explore Epoch Data"),
-            ui.output_data_frame("table2"),
+            ui.div(
+                ui.output_data_frame("table2"),
+                style="height: 300px; overflow-y: scroll;"
+            ),
         ),
-        # Epoch 3
+
+        # ---------------- Epoch 3 ----------------
         ui.panel_well(
             ui.h4("Epoch 3"),
             ui.input_text("wallet3", "Enter Wallet Address"),
-            ui.output_text_verbatim("result3"),
+            ui.div(
+                ui.output_text("result3"),
+                style=(
+                    "white-space: pre-wrap; word-wrap: break-word; "
+                    "background-color: #f8f9fa; padding: 10px; border-radius: 4px;"
+                ),
+            ),
             ui.h5("Explore Epoch Data"),
-            ui.output_data_frame("table3"),
+            ui.div(
+                ui.output_data_frame("table3"),
+                style="height: 300px; overflow-y: scroll;"
+            ),
         ),
     )
 )
@@ -98,4 +128,5 @@ def server(input, output, session):
     def table3():
         return render.DataTable(epoch3)
 
+# App
 app = App(app_ui, server)
