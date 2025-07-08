@@ -25,8 +25,8 @@ def generate_message(df, wallet):
             )
     else:
         return (
-            f"Wallet address {wallet} was not found during the {df['snapshot_date'].iloc[0]} snapshot process, "
-            f"and did not contain IMG at that point in time."
+            f"Wallet address {wallet} was not found during the {df['snapshot_date'].iloc[0]} snapshot process. "
+            f"It did not contain IMG at that point in time, or received rewards in an earlier distribution."
         )
 
 # UI
@@ -36,7 +36,7 @@ app_ui = ui.page_fluid(
 
         # ---------------- Epoch 1 ----------------
         ui.panel_well(
-            ui.h4("Epoch 1"),
+            ui.h4("Epoch 1: 05/24/25 outage through 06/27/25"),
             ui.input_text("wallet1", "Enter Wallet Address"),
             ui.div(
                 ui.output_text("result1"),
@@ -54,7 +54,7 @@ app_ui = ui.page_fluid(
 
         # ---------------- Epoch 2 ----------------
         ui.panel_well(
-            ui.h4("Epoch 2"),
+            ui.h4("Epoch 2: 06/27/25 through 06/30/25"),
             ui.input_text("wallet2", "Enter Wallet Address"),
             ui.div(
                 ui.output_text("result2"),
@@ -72,7 +72,7 @@ app_ui = ui.page_fluid(
 
         # ---------------- Epoch 3 ----------------
         ui.panel_well(
-            ui.h4("Epoch 3"),
+            ui.h4("Epoch 3 06/30/25 through 07/06/25"),
             ui.input_text("wallet3", "Enter Wallet Address"),
             ui.div(
                 ui.output_text("result3"),
