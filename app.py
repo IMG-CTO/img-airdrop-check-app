@@ -45,10 +45,10 @@ app_ui = ui.page_fluid(
                     "background-color: #f8f9fa; padding: 10px; border-radius: 4px;"
                 ),
             ),
-            #ui.h5("Explore Epoch Data"),
-            #ui.div(
-                #ui.output_data_frame("table1"),
-                #style="height: 300px; overflow-y: scroll;"
+            ui.h5("Explore Epoch Data"),
+            ui.div(
+                ui.output_data_frame("table1"),
+                style="height: 300px; overflow-y: scroll;"
             ),
         ),
 
@@ -63,10 +63,10 @@ app_ui = ui.page_fluid(
                     "background-color: #f8f9fa; padding: 10px; border-radius: 4px;"
                 ),
             ),
-            #ui.h5("Explore Epoch Data"),
-            #ui.div(
-               # ui.output_data_frame("table2"),
-                #style="height: 300px; overflow-y: scroll;"
+            ui.h5("Explore Epoch Data"),
+            ui.div(
+                ui.output_data_frame("table2"),
+                style="height: 300px; overflow-y: scroll;"
             ),
         ),
 
@@ -81,10 +81,10 @@ app_ui = ui.page_fluid(
                     "background-color: #f8f9fa; padding: 10px; border-radius: 4px;"
                 ),
             ),
-            #ui.h5("Explore Epoch Data"),
-            #ui.div(
-                #ui.output_data_frame("table3"),
-                #style="height: 300px; overflow-y: scroll;"
+            ui.h5("Explore Epoch Data"),
+            ui.div(
+                ui.output_data_frame("table3"),
+                style="height: 300px; overflow-y: scroll;"
             ),
         ),
     )
