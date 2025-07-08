@@ -36,7 +36,7 @@ app_ui = ui.page_fluid(
 
         # ---------------- Epoch 1 ----------------
         ui.panel_well(
-            ui.h4("Epoch 1: 05/24/25 outage through 06/27/25"),
+            ui.h4("Epoch 1: 05/24/25 through 06/27/25"),
             ui.input_text("wallet1", "Enter Wallet Address"),
             ui.div(
                 ui.output_text("result1"),
@@ -72,7 +72,7 @@ app_ui = ui.page_fluid(
 
         # ---------------- Epoch 3 ----------------
         ui.panel_well(
-            ui.h4("Epoch 3 06/30/25 through 07/06/25"),
+            ui.h4("Epoch 3: 06/30/25 through 07/06/25"),
             ui.input_text("wallet3", "Enter Wallet Address"),
             ui.div(
                 ui.output_text("result3"),
